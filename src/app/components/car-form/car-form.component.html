@@ -23,7 +23,7 @@
     </div>
     <div class="form-group">
       <label>Is Automatic:</label><br>       
-      <input #isAutomatic="ngModel" [(ngModel)]="newCar.isAutomatic" name="isAutomatic" type="checkbox" value="true" required> True<br>
+      <input #isAutomatic="ngModel" [(ngModel)]="newCar.isAutomatic" name="isAutomatic" type="checkbox" value="true"> True<br>
     </div>
     <div class="form-group">
       <label>Engine:</label><br>       
@@ -34,6 +34,7 @@
     </div>
 
     <button type="button" class="btn btn-danger" [disabled]="carForm.form.pristine" (click)="carForm.reset()">Reset</button>
-    <button type="submit" class="btn btn-primary" [disabled]="!carForm.valid" [routerLink]="cars" >Add Car</button>
+    <button type="submit" class="btn btn-primary" [disabled]="!carForm.valid">Add Car</button>
+    <button type="button" class="btn btn-primary" (click)="preview(newCar)">Preview</button>
 
 </form>

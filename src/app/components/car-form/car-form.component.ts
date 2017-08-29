@@ -24,4 +24,14 @@ export class CarFormComponent implements OnInit {
     console.log(this.newCar);
     this.carsService.addCar(newCarCopy);
   }
+  preview(newCar){
+    alert("Mark: " + newCar.mark + "\n" + 
+          "Model: " + newCar.model + "\n" +
+          "Year: " + newCar.year + "\n" +
+          "Max Speed: " + newCar.maxSpeed + "\n" +
+          "Is Automatic: " + newCar.isAutomatis + "\n" +
+          "Engine: " + newCar.engine + "\n" +
+          "Number Of Doors	: " + newCar.numberOfDoors + "\n"
+  );
+  }
 }
