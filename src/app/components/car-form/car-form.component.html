@@ -1,0 +1,39 @@
+<form #carForm="ngForm" (ngSubmit)="addCar(newCar); carForm.reset()">
+    <div class="form-group">
+      <label>Mark:</label>
+      <input #mark="ngModel" [(ngModel)]="newCar.mark" name="mark" minlength="2" type="text" class="form-control" required>
+    </div>
+    <div class="form-group">
+      <label>Model:</label>
+      <input #model="ngModel" [(ngModel)]="newCar.model" name="model" minlength="2" type="text" class="form-control" required>
+    </div>
+    <div class="form-group">
+      <label>Year:</label><br>
+      <select #year="ngModel" [(ngModel)]="newCar.year" name="year">
+        <option *ngFor="let carYear of carYears" value="{{ carYear }}" class="form-control" required>{{ carYear }}</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label>Max Speed:</label>
+      <input #maxSpeed="ngModel" [(ngModel)]="newCar.maxSpeed" name="maxSpeed" minlength="2" type="number" class="form-control" required>
+    </div>
+    <div class="form-group">
+      <label>Number of Doors:</label>
+      <input #numberOfDoors [(ngModel)]="newCar.numberOfDoors" name="numberOfDoors" type="number" class="form-control" required>
+    </div>
+    <div class="form-group">
+      <label>Is Automatic:</label><br>       
+      <input #isAutomatic="ngModel" [(ngModel)]="newCar.isAutomatic" name="isAutomatic" type="checkbox" value="true" required> True<br>
+    </div>
+    <div class="form-group">
+      <label>Engine:</label><br>       
+      <input #engine="ngModel" [(ngModel)]="newCar.engine" name="engine" type="radio" value="Diesel" required> Diesel<br> 
+      <input #engine="ngModel" [(ngModel)]="newCar.engine" name="engine" type="radio" value="Petrol" required> Petrol<br> 
+      <input #engine="ngModel" [(ngModel)]="newCar.engine" name="engine" type="radio" value="Electric" required> Electric<br> 
+      <input #engine="ngModel" [(ngModel)]="newCar.engine" name="engine" type="radio" value="Hybrid" required> Hybrid<br>     
+    </div>
+
+    <button type="button" class="btn btn-danger" [disabled]="carForm.form.pristine" (click)="carForm.reset()">Reset</button>
+    <button type="submit" class="btn btn-primary" [disabled]="!carForm.valid" [routerLink]="cars" >Add Car</button>
+
+</form>
