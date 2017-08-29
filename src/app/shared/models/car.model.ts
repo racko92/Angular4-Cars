@@ -5,7 +5,7 @@ export class Car {
         public model?: string,
         public year?: string,
         public maxSpeed?: number,
-        public isAutomatic?: boolean,
+        public isAutomatic: boolean = false,
         public engine?: string,
         public numberOfDoors?: number,
     ){}
